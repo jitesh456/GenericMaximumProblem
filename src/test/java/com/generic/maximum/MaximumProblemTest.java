@@ -9,9 +9,9 @@ public class MaximumProblemTest {
     GenericMaximumProblem genericMaximumProblem;
     @Test
     public void givenThreeNumberInInteger_WhenFirstNumberMaximum_ReturnMaximum() {
-        genericMaximumProblem=new GenericMaximumProblem(30,10,20);
+        genericMaximumProblem=new GenericMaximumProblem(30,10,20,40);
         Comparable maximumNumber=genericMaximumProblem.findMaximum();
-        Assert.assertEquals(30,(int)maximumNumber);
+        Assert.assertEquals(40,(int)maximumNumber);
     }
 
     @Test
@@ -53,14 +53,14 @@ public class MaximumProblemTest {
 
     @Test
     public void givenThreeStringValue_WhenFirstValueMaximum_ReturnMaximum() {
-        genericMaximumProblem= new GenericMaximumProblem("Peach","Apple","Banana");
+        genericMaximumProblem= new GenericMaximumProblem("Peach","Apple","Banana","Pineapple");
         Comparable maximumValue=genericMaximumProblem.findMaximum();
-        Assert.assertEquals("Peach",maximumValue);
+        Assert.assertEquals("Pineapple",maximumValue);
     }
     @Test
     public void givenThreeStringValue_WhenSecondValueMaximum_ReturnMaximum() {
         genericMaximumProblem= new GenericMaximumProblem("Apple","Peach","Banana");
-        Comparable maximumValue=genericMaximumProblem.findMaximum();
+        Comparable maximumValue = genericMaximumProblem.findMaximum();
         Assert.assertEquals("Peach",maximumValue);
     }
     @Test

@@ -1,37 +1,24 @@
 package com.generic.maximum;
 
-public class GenericMaximumProblem<E extends  Comparable<E>>{
-    E firstValue;
-    E secondValue;
-    E thirdValue;
+import javax.lang.model.element.Element;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
-    public GenericMaximumProblem(E firstValue, E secondValue, E thirdValue) {
-        this.firstValue = firstValue;
-        this.secondValue = secondValue;
-        this.thirdValue = thirdValue;
+public class GenericMaximumProblem<E extends  Comparable<E>>{
+    ArrayList<E> values =new ArrayList<>();
+
+    public GenericMaximumProblem(E ...Element) {
+        for(E element:Element) {
+            values.add(element);
+        }
     }
 
     public  E findMaximum()
     {
-        E maximum=findMaximum(firstValue,secondValue,thirdValue);
+        Collections.sort(values,Collections.reverseOrder());
+        E maximum=values.get(0);
         return maximum;
     }
-
-
-    public  static <E extends  Comparable<E>> E findMaximum( E firstValue,E secondValue,E thirdValue) {
-        E maximumValue=firstValue;
-
-        if(firstValue.compareTo( secondValue)>0)
-            maximumValue=firstValue;
-
-        if(secondValue.compareTo(firstValue)>0)
-            maximumValue=secondValue;
-
-        if(thirdValue.compareTo(maximumValue)>0)
-            maximumValue=thirdValue;
-
-        return  maximumValue;
-    }
-
 
 }
