@@ -3,6 +3,8 @@ package com.generic.maximum;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.sql.SQLOutput;
+
 public class MaximumProblemTest {
         GenericMaximumProblem genericMaximumProblem=new GenericMaximumProblem();
     @Test
@@ -23,8 +25,22 @@ public class MaximumProblemTest {
         Assert.assertEquals(40,(int)maximumNumber);
     }
 
-
-
-
-
+    @Test
+    public void givenThreeDoubleValue_WhenFirstValueMaximum_ReturnMaximum() {
+       Float maximumValue=genericMaximumProblem.findMaximum(10.5f,10.2f,10.3f);
+        System.out.println(maximumValue);
+        Assert.assertEquals(10.5f,(float)maximumValue,0.0);
+    }
+    @Test
+    public void givenThreeDoubleValue_WhenSecondValueMaximum_ReturnMaximum() {
+        Float maximumValue=genericMaximumProblem.findMaximum(10.1f,10.6f,10.3f);
+        System.out.println(maximumValue);
+        Assert.assertEquals(10.6f,(float)maximumValue,0.0);
+    }
+    @Test
+    public void givenThreeDoubleValue_WhenThirdValueMaximum_ReturnMaximum() {
+        Float maximumValue=genericMaximumProblem.findMaximum(10.1f,10.2f,10.3f);
+        System.out.println(maximumValue);
+        Assert.assertEquals(10.3f,(float)maximumValue,0.0);
+    }
 }

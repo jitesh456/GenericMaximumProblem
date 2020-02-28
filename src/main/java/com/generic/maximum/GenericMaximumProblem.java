@@ -1,21 +1,34 @@
 package com.generic.maximum;
 
 public class GenericMaximumProblem {
-    public Integer findMaximum(Integer firstNumber, Integer secondNumber,Integer thirdNumber) {
-        Integer maximumNumber=0;
+    public Integer findMaximum(Integer firstValue, Integer secondValue,Integer thirdValue) {
+        Integer maximumValue=firstValue;
 
-        if(firstNumber.compareTo(secondNumber)>0)
-            maximumNumber=firstNumber;
+        if(firstValue.compareTo(secondValue)>0)
+            maximumValue=firstValue;
 
-        if(secondNumber.compareTo(firstNumber)>0)
-            maximumNumber=secondNumber;
+        if(secondValue.compareTo(firstValue)>0)
+            maximumValue=secondValue;
 
-        if(thirdNumber.compareTo(maximumNumber)>0)
-            maximumNumber=thirdNumber;
+        if(thirdValue.compareTo(maximumValue)>0)
+            maximumValue=thirdValue;
 
-        return  maximumNumber;
+        return  maximumValue;
     }
 
 
+    public Float findMaximum(Float firstValue, Float secondValue, Float thirdValue) {
+       Float maximumValue=firstValue;
 
+        if(firstValue.compareTo(secondValue)>0)
+            maximumValue=firstValue;
+
+        if(secondValue.compareTo(firstValue)>0)
+            maximumValue=secondValue;
+
+        if(thirdValue.compareTo(maximumValue)>0)
+            maximumValue=thirdValue;
+
+        return  maximumValue;
+    }
 }
