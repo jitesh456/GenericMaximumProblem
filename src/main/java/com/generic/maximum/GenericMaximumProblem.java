@@ -7,18 +7,27 @@ import java.util.Collections;
 
 public class GenericMaximumProblem<E extends  Comparable<E>>{
     ArrayList<E> values =new ArrayList<>();
+    E maximum;
 
     public GenericMaximumProblem(E ...Element) {
         for(E element:Element) {
             values.add(element);
         }
+
     }
 
     public  E findMaximum()
     {
         Collections.sort(values,Collections.reverseOrder());
-        E maximum=values.get(0);
+         maximum=values.get(0);
         return maximum;
     }
+    public void printMaximum() {
+        System.out.println("Maximum value="+maximum);
+    }
+
+
+
+
 
 }
