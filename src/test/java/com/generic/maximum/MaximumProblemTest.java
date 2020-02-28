@@ -6,59 +6,67 @@ import org.junit.Test;
 import java.sql.SQLOutput;
 
 public class MaximumProblemTest {
-        GenericMaximumProblem genericMaximumProblem=new GenericMaximumProblem();
+    GenericMaximumProblem genericMaximumProblem;
     @Test
     public void givenThreeNumberInInteger_WhenFirstNumberMaximum_ReturnMaximum() {
-        Integer maximumNumber=genericMaximumProblem.findMaximum(30,10,20);
+        genericMaximumProblem=new GenericMaximumProblem(30,10,20);
+        Comparable maximumNumber=genericMaximumProblem.findMaximum();
         Assert.assertEquals(30,(int)maximumNumber);
     }
 
     @Test
     public void givenThreeNumberInInteger_WhenSecondNumberMaximum_ReturnMaximum() {
-        Integer maximumNumber=genericMaximumProblem.findMaximum(30,50,40);
+        genericMaximumProblem=new GenericMaximumProblem(30,50,40);
+        Comparable maximumNumber=genericMaximumProblem.findMaximum();
         Assert.assertEquals(50,(int)maximumNumber);
     }
 
     @Test
     public void givenThreeNumberInInteger_WhenThirdNumber_ReturnMaximum() {
-        Integer maximumNumber=genericMaximumProblem.findMaximum(30,10,40);
+        genericMaximumProblem= new GenericMaximumProblem(30,10,40);
+        Comparable maximumNumber=genericMaximumProblem.findMaximum();
         Assert.assertEquals(40,(int)maximumNumber);
     }
 
     @Test
-    public void givenThreeDoubleValue_WhenFirstValueMaximum_ReturnMaximum() {
-       Float maximumValue=genericMaximumProblem.findMaximum(10.5f,10.2f,10.3f);
-        System.out.println(maximumValue);
+    public void givenThreeFloatValue_WhenFirstValueMaximum_ReturnMaximum() {
+        genericMaximumProblem=new GenericMaximumProblem(10.5f,10.2f,10.3f);
+        Comparable maximumValue=genericMaximumProblem.findMaximum();
         Assert.assertEquals(10.5f,(float)maximumValue,0.0);
     }
 
     @Test
-    public void givenThreeDoubleValue_WhenSecondValueMaximum_ReturnMaximum() {
-        Float maximumValue=genericMaximumProblem.findMaximum(10.1f,10.6f,10.3f);
+    public void givenThreeFloatValue_WhenSecondValueMaximum_ReturnMaximum() {
+        genericMaximumProblem=new GenericMaximumProblem(12.5f,13.5f,10.5f);
+        Comparable maximumValue=genericMaximumProblem.findMaximum();
         System.out.println(maximumValue);
-        Assert.assertEquals(10.6f,(float)maximumValue,0.0);
+        Assert.assertEquals(13.5f,(float)maximumValue,0.0);
     }
 
     @Test
-    public void givenThreeDoubleValue_WhenThirdValueMaximum_ReturnMaximum() {
-        Float maximumValue=genericMaximumProblem.findMaximum(10.1f,10.2f,10.3f);
-        System.out.println(maximumValue);
-        Assert.assertEquals(10.3f,(float)maximumValue,0.0);
+    public void givenThreeFloatValue_WhenThirdValueMaximum_ReturnMaximum() {
+        genericMaximumProblem= new GenericMaximumProblem(10.5f,12.5f,15.5f);
+        Comparable maximumValue=genericMaximumProblem.findMaximum();
+
+        Assert.assertEquals(15.5f,(float)maximumValue,0.0);
     }
 
     @Test
     public void givenThreeStringValue_WhenFirstValueMaximum_ReturnMaximum() {
-        String maximumValue=genericMaximumProblem.findMaximum("Peach","Apple","Banana");
+        genericMaximumProblem= new GenericMaximumProblem("Peach","Apple","Banana");
+        Comparable maximumValue=genericMaximumProblem.findMaximum();
         Assert.assertEquals("Peach",maximumValue);
     }
     @Test
     public void givenThreeStringValue_WhenSecondValueMaximum_ReturnMaximum() {
-        String maximumValue=genericMaximumProblem.findMaximum("Apple","Peach","Banana");
+        genericMaximumProblem= new GenericMaximumProblem("Apple","Peach","Banana");
+        Comparable maximumValue=genericMaximumProblem.findMaximum();
         Assert.assertEquals("Peach",maximumValue);
     }
     @Test
     public void givenThreeStringValue_WhenThirdValueMaximum_ReturnMaximum() {
-        String maximumValue=genericMaximumProblem.findMaximum("Apple","Banana","Peach");
+        genericMaximumProblem=new GenericMaximumProblem("Apple","Banana","Peach");
+        Comparable maximumValue=genericMaximumProblem.findMaximum();
         Assert.assertEquals("Peach",maximumValue);
     }
 }
